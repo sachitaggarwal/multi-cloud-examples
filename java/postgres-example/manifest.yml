@@ -1,0 +1,11 @@
+---
+applications:  
+- name: i030998-postgres-sap-demo
+  memory: 768M
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  path: target/postgres-example-1.0-SNAPSHOT.jar
+  services:
+   - myservice
+  env:
+    TAX_SERVICE: https://taxservicew6e0ed3dd.int.sap.hana.ondemand.com/tax.svc/api/v1/calculate/tax?amount=
+    CORS_DOMAIN: "cfapps.sap.hana.ondemand.com"

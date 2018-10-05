@@ -1,0 +1,40 @@
+extends layout
+block content
+  script(src='/javascripts/jquery-3.2.1.js')
+  script.
+    $(document).ready(function () {
+    $("input#radio[type='radio']").on("change", function(){
+      var pid = $(this).parent().next('td').text();
+      var description= $(this).parent().next('td').next('td').next('td').text();
+      if (pid) {
+          $("#writelink").attr("hidden", false);
+          $("#writelink").attr("href", "/ui/doreview?id="+pid);
+          $("#seelink").attr("hidden", false);
+          $("#seelink").attr("href", "ui/reviews?id="+pid);
+        };
+    });
+    });
+  h2 List of Products
+    table#productList
+      thead
+        tr
+          td 
+          td Id
+          td Name
+          td Description
+          td Rating
+      tbody
+        - each product in products.rows
+          tr
+            td
+              input#radio(type='radio', name='radioselect')
+            td #{product.productid}
+            td #{product.productname}
+            td #{product.productdesc}
+            td #{product.round}
+  br
+  a#writelink(href="ui/review", hidden="true") Write a review
+  br
+  br
+  a#seelink(href="api/reviews", hidden="true") See reviews
+  

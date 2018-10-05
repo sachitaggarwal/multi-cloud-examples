@@ -1,0 +1,26 @@
+{
+  "name": "js",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "*",
+    "jade": "*",
+    "serve-favicon": "*",
+    "serve-static": "*",
+    "body-parser": "*",
+    "morgan": "*",
+    "errorhandler": "*",
+    "method-override": "*",
+    "pg": "*",
+    "http": "*",
+    "cfenv": "*",
+    "amqplib": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "jquery": "*",
+    "twit": "*"
+  }
+}

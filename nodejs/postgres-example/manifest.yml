@@ -1,0 +1,10 @@
+---
+applications:
+- name: reviews-i030998
+  memory: 256M
+  instances: 1
+  host: reviews-i030998
+  command: node app.js
+  buildpack: nodejs_buildpack
+  services:
+  - delorean-postgres

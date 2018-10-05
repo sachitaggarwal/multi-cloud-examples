@@ -1,0 +1,18 @@
+extends layout
+block content
+  h2 List of Reviews for Products #{name}
+    table#reviewList
+      thead
+        tr
+          td Email
+          td Rating
+          td Review
+      tbody
+        - each review in reviews
+          tr
+            td #{review.email}
+            td #{review.rating}
+            td #{review.review}
+    br
+
+  a#homelink(href="/") Home
